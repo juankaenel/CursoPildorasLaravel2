@@ -7,6 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Pagina principal del administrador</h1>
+<h1>Página principal del administrador</h1>
+<table width="700" border="1">
+    <tr>
+        <th>Id</th>
+        <th>Rol ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Creado</th>
+        <th>Actualizado</th>
+    </tr>
+    @if($users)
+        @foreach($users as $user)
+            <tr>
+                <td>{{$user->id}}</td>
+                <td>{{$user->role_id}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->created_at}}</td>
+                <td>{{$user->updated_at}}</td>
+            </tr>
+        @endforeach
+    @endif
+</table>
+
 </body>
 </html>
