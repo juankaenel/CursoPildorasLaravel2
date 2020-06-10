@@ -27,6 +27,7 @@ class AdminUsersController extends Controller
     public function create()
     {
         return view('admin.users.create');
+
     }
 
     /**
@@ -37,7 +38,7 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
     }
 
     /**

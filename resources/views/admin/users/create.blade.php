@@ -8,5 +8,57 @@
 </head>
 <body>
 <h1>Página para agregar usuarios</h1>
+<div class="container mt-3"> <!--El enctype es para poder enviar imagenes-->
+    <form action="{{action('AdminUsersController@store')}}" method="POST" >
+        @csrf
+        <table class="table">
+            <tr>
+                <td>Nombre:</td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" name="password">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="text" name="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Verificar email:</td>
+                <td>
+                    <input type="text" name="email_verified_at">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Rol:</td>
+                <td>
+                    <input type="text" name="role_id">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" name="enviar" value="Crear usuario">
+                </td>
+                <td>
+                    <input type="reset" name="borrar" value="Borrar info">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>
