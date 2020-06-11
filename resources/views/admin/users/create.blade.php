@@ -9,7 +9,7 @@
 <body>
 <h1>Página para agregar usuarios</h1>
 <div class="container mt-3"> <!--El enctype es para poder enviar imagenes-->
-    <form action="{{action('AdminUsersController@store')}}" method="POST" >
+    <form action="{{action('AdminUsersController@store')}}" method="POST"  enctype="multipart/form-data" >
         @csrf
         <table class="table">
             <tr>
@@ -48,6 +48,15 @@
                     <input type="text" name="role_id">
                 </td>
             </tr>
+
+            {{--                Tabla para la base de datos donde se guardará la imagen, la columna se llama ruta en la base de datos,--}}
+            <table>
+                <tr>
+                    <td>
+                        <input accept="image/*" type="file" name="ruta_foto">
+                    </td>
+                </tr>
+            </table>
 
             <tr>
                 <td>
