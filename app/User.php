@@ -16,13 +16,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role_id','ruta_foto',
+        'name', 'email', 'password','role_id','foto_id',
     ];
 
     /**
      * The attributes that should be hidden for arrays.
      *
-     * @var array
+     * @var arrayruta
      */
     protected $hidden = [
         'password', 'remember_token',
@@ -43,6 +43,6 @@ class User extends Authenticatable
     }
 
     public function foto(){
-        return $this->belongsTo('App\Foto'); /*relacionado con el modelo foto*/
+        return $this->belongsTo('App\Foto'); /*relacionado con el modelo fot*/
     }
 }

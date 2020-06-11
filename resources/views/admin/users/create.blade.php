@@ -53,7 +53,7 @@
             <table>
                 <tr>
                     <td>
-                        <input accept="image/*" type="file" name="ruta_foto">
+                        <input accept="image/*" type="file" name="foto_id">
                     </td>
                 </tr>
             </table>
