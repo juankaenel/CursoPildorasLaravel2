@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Página principal del administrador</h1>
-<table width="700" border="1">
+<table class="table-borderless" border="2" width="800">
     <tr>
         <th>Id</th>
         <th>Rol ID</th>
@@ -16,6 +16,7 @@
         <th>Email</th>
         <th>Creado</th>
         <th>Actualizado</th>
+        <th>Foto</th>
     </tr>
     @if($users)
         @foreach($users as $user)
@@ -26,6 +27,12 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->created_at}}</td>
                 <td>{{$user->updated_at}}</td>
+                {{--Si el usuario tiene foto mostrame la foto sino mostrame 'sin foto' --}}
+                @if($user->foto)
+                    <td><img src="/images/{{$user->foto->ruta_foto}}" width="150"></td>
+                @else
+                    <td>Sin foto</td>
+                @endif
             </tr>
         @endforeach
     @endif

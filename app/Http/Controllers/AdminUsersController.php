@@ -61,6 +61,8 @@ class AdminUsersController extends Controller
         $entrada['password']=bcrypt($request->password); //encriptamos la psw
         User::create($entrada);
 
+        redirect('/admin/users');
+
 
     }
 
